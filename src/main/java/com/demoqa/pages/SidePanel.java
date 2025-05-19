@@ -1,6 +1,8 @@
 package com.demoqa.pages;
 
 import com.demoqa.alertsFrameWindows.AlertsPage;
+import com.demoqa.alertsFrameWindows.BrowserWindows;
+import com.demoqa.alertsFrameWindows.FramePage;
 import com.demoqa.bookStore.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,5 +32,20 @@ public class SidePanel extends BasePage{
     public SidePanel selectFrame() {
         clickWithJS(frames,0,300);
         return new SidePanel(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Nested Frames']")
+    WebElement nestedFrames;
+
+    public FramePage selectedNestedFrames() {
+        clickWithJS(nestedFrames,0,300);
+        return new FramePage(driver);
+    }
+    @FindBy(xpath = "//span[.='Browser Windows']")
+    WebElement browserWindows;
+
+    public BrowserWindows selectBrowserWindows() {
+    clickWithJS(browserWindows,0,300);
+        return new BrowserWindows(driver);
     }
 }

@@ -9,7 +9,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
- @FindBy(id="userName")
+ @FindBy(id="userNam")
     WebElement userField;
     @FindBy(id = "password")
     WebElement passwordField;
